@@ -7,3 +7,4 @@ interface Task {
     createdAt : Date;
     updateAt : Date;
 }
+export default Task;
