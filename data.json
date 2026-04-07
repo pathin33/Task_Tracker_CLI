@@ -2,35 +2,35 @@
   {
     "id": 613790,
     "description": "Heheh",
-    "status": "to-do",
+    "status": "todo",
     "createdAt": "2026-04-07T10:26:15.041Z",
     "updateAt": "2026-04-07T10:54:03.131Z"
   },
   {
     "id": 444798,
     "description": "go to home",
-    "status": "to-do",
+    "status": "todo",
     "createdAt": "2026-04-07T10:27:43.529Z",
     "updateAt": "2026-04-07T10:27:43.529Z"
   },
   {
     "id": 924677,
     "description": "create a website",
-    "status": "to-do",
+    "status": "todo",
     "createdAt": "2026-04-07T10:50:36.220Z",
     "updateAt": "2026-04-07T10:50:36.220Z"
   },
   {
     "id": 436882,
     "description": "create a website1",
-    "status": "to-do",
+    "status": "todo",
     "createdAt": "2026-04-07T10:50:36.221Z",
     "updateAt": "2026-04-07T10:50:36.221Z"
   },
   {
     "id": 776141,
     "description": "create a website2",
-    "status": "to-do",
+    "status": "todo",
     "createdAt": "2026-04-07T10:50:36.221Z",
     "updateAt": "2026-04-07T10:50:36.221Z"
   }

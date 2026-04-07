@@ -1,32 +1,43 @@
-import Commands from "./enum";
 import Task from './types';
 import { readFileJSON, wirteFileJSON } from "./storage"; 
 
-export function add(firstParam:string,nameFile:string){
-    const oldTask : Task [] = readFileJSON(nameFile)
+export function addTask(firstParam:string,nameFile:string){
+    const oldTask : Task [] = readFileJSON(nameFile);
     const newTask : Task = {
         id : Math.floor(Math.random() * 1000000),
         //ramdom số id ngẫu nhiêu
         description : firstParam,
-        status : "to-do",
+        status : "todo",
         createdAt : new Date(),
         updateAt : new Date()
         
     }
-    const data = oldTask.concat(newTask)
-    wirteFileJSON(nameFile,data)
-    console.log("Thêm dữ liệu thành công")
+    const data = oldTask.concat(newTask);
+    wirteFileJSON(nameFile,data);
 }
 
-export function update(secondParam:string,firstParam:string,nameFile:string){
-    const data : Task[] = readFileJSON(nameFile)
-    const updateTask  = data.find(task => task.id === Number(firstParam))
+export function updateTask(secondParam:string,firstParam:string,nameFile:string){
+    const oldTask : Task[] = readFileJSON(nameFile);
+    const updateTask  = oldTask.find(task => task.id === Number(firstParam));
     if(updateTask !== undefined){
         updateTask.description = secondParam
         updateTask.updateAt = new Date()
+        wirteFileJSON(nameFile,oldTask);
     }
-    wirteFileJSON("./data.json",data)
 
 }
 
-update ("Heheh","613790","./data.json")
+export function deleteTask(firstParam:string,nameFile:string){
+    const oldTask : Task[] = readFileJSON(nameFile);
+    const deleteTask = oldTask.filter(task => task.id !== Number(firstParam))
+    // lọc ra các mảng có id khác id xóa
+    
+    wirteFileJSON(nameFile,deleteTask)
+}
+
+export function listTask(nameFile:string){
+    const allTask : Task[] = readFileJSON(nameFile);
+    allTask.forEach((task,index)=>{
+        console.log(`Công việc thứ ${index+1} : ${task.description} | Trạng thái : ${task.status}`)
+    })
+}

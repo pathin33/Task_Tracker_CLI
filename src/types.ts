@@ -1,7 +1,7 @@
 interface Task {
     id : number;
     description : string;
-    status : "to-do" | "in-progress" |"done";
+    status : "todo" | "in-progress" |"done";
     createdAt : Date;
     updateAt : Date;
 }
