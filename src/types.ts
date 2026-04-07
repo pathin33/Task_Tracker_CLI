@@ -1,5 +1,3 @@
-//file định nghĩa các type
-
 interface Task {
     id : number;
     description : string;
