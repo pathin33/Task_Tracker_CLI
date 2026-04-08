@@ -14,6 +14,7 @@ export function addTask(firstParam: string, nameFile: string) {
     }
     const data = oldTask.concat(newTask);
     writeFileJSON(nameFile, data);
+    console.log("Thêm công việc thành công");
 }
 
 export function updateTask(secondParam: string, firstParam: number, nameFile: string) {
@@ -24,6 +25,7 @@ export function updateTask(secondParam: string, firstParam: number, nameFile: st
             updateTask.description = secondParam
             updateTask.updateAt = new Date()
             writeFileJSON(nameFile, oldTask);
+            console.log("Cập nhật công việc thành công")
         }
         else {
             console.log("Công việc thay đổi không được để trống");
@@ -37,7 +39,8 @@ export function deleteTask(firstParam: number, nameFile: string) {
     const oldTask: Task[] = readFileJSON(nameFile);
     const deleteTask = oldTask.filter(task => task.id !== Number(firstParam))
     // lọc ra các mảng có id khác id xóa
-    writeFileJSON(nameFile, deleteTask)
+    writeFileJSON(nameFile, deleteTask);
+    console.log("Xóa công việc thành công");
 }
 
 export function listTask(nameFile: string, firstParam: string) {
@@ -63,7 +66,7 @@ export function listTask(nameFile: string, firstParam: string) {
             }
         });
     }
-    else if (firstParam === "") {
+    else if (!firstParam) {
         allTask.forEach((task, index) => {
             console.log(`Id: ${task.id} | Công việc thứ ${index + 1} : ${task.description} (${task.status})`);
         })
@@ -73,6 +76,7 @@ export function listTask(nameFile: string, firstParam: string) {
     }
 }
 
+
 export function statusMark(nameFile: string, firstParam: number, action: string) {
     const allTask: Task[] = readFileJSON(nameFile);
     const task = allTask.find(item => item.id === firstParam);
@@ -81,11 +85,13 @@ export function statusMark(nameFile: string, firstParam: number, action: string)
             task.status = "done";
             task.updateAt = new Date();
             writeFileJSON(nameFile, allTask);
+            console.log("Đã đổi trạng thái công việc sang đã hoàn thành");
         }
         else if (action === "mark-in-progress") {
             task.status = "in-progress";
             task.updateAt = new Date();
             writeFileJSON(nameFile, allTask);
+            console.log("Đã đổi trạng thái công việc sang đang thực hiện");
         }
     }
     else {
