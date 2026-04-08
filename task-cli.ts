@@ -4,6 +4,5 @@ const action = args[0] //hành động thao tác
 const firstParam = args[1];    // Mô tả task, hoặc ID, hoặc status (done/todo)
 const secondParam = args[2] //Mô tả khi update
 
-
 performActions(action,firstParam,secondParam)
 

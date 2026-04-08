@@ -1,10 +1,10 @@
 {
   "name": "task-tracker",
   "version": "1.0.0",
-  "main": "index.js",
+  "main": "dist/task-cli.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "dev": "ts-node src/index.ts"
+    "dev": "ts-node src/task-cli.ts"
   },
   "keywords": [],
   "author": "",

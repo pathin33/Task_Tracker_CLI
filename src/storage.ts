@@ -2,7 +2,7 @@ import fs from 'fs'
 import Task from './types'
 
 //ghi file
-export function wirteFileJSON(nameFile: string, task: Task[]) {
+export function writeFileJSON(nameFile: string, task: Task[]) {
     try {
         const jsonString = JSON.stringify(task, null, 2);
         // Chuyển Object thành string
