@@ -26,5 +26,12 @@
     "status": "in-progress",
     "createdAt": "2026-04-07T10:50:36.221Z",
     "updateAt": "2026-04-08T16:01:54.346Z"
+  },
+  {
+    "id": 874108,
+    "description": "Buy groceries and cook dinner",
+    "status": "todo",
+    "createdAt": "2026-04-08T16:31:41.357Z",
+    "updateAt": "2026-04-08T16:31:41.357Z"
   }
 ]
